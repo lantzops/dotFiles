@@ -226,3 +226,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 eval "$(fzf --zsh)"
 
 alias kboff='/home/lantzops/claude/input-toggle.sh'
+
+# Dotfiles bare repo manager
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
