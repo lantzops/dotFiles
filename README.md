@@ -13,11 +13,21 @@ Tracked with the [bare-repo-in-$HOME](https://www.atlassian.com/git/tutorials/do
 - **TUI tools:** btop, htop, yazi, mpv
 - **Setup:** `arch-setup-script.sh` — bootstrap script for fresh CachyOS installs
 
-## Install on a new machine
+## Install
+
+### macOS (one-liner)
+
+```sh
+bash <(curl -fsSL https://raw.githubusercontent.com/lantzops/dotFiles/main/bootstrap-mac.sh)
+```
+
+This installs Homebrew, clones the repo with sparse-checkout (excludes Linux/wayland-only configs), runs `brew bundle install` from the [Brewfile](Brewfile), and switches your login shell to brew bash. Prereq: an SSH key authorized for this repo.
+
+### Linux (manual)
 
 ```sh
 # 1. Clone as a bare repo
-git clone --bare git@github.com:lantzops/dotfiles.git $HOME/.dotfiles
+git clone --bare git@github.com:lantzops/dotFiles.git $HOME/.dotfiles
 
 # 2. Define a convenience alias for this shell
 alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
