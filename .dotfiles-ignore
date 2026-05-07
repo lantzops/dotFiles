@@ -1,0 +1,78 @@
+# Secrets / auth — NEVER commit these
+.ssh/
+.gnupg/
+.config/gh/
+.config/git/credentials
+.netrc
+.npmrc
+.pki/
+.nv/
+.terraform.d/
+.aws/
+.azure/
+.docker/config.json
+secerets/
+secrets/
+.claude/
+.claude.json
+.agents/
+*.key
+*.pem
+*.pfx
+*.p12
+*token*
+*credential*
+*secret*
+id_rsa*
+id_ed25519*
+id_ecdsa*
+id_dsa*
+
+# Browser / chat app data (cookies, sessions)
+.mozilla/
+.config/mozilla/
+.config/chromium/
+.config/google-chrome/
+.config/discord/
+.config/Slack/
+
+# Cache / runtime state / autogen
+.cache/
+.local/
+.var/
+.npm/
+.fltk/
+.steam/
+.steampath
+.steampid
+.config/pulse/
+.pulse-cookie
+.viminfo
+.vim/plugged/
+.vim/undo/
+.vim/.netrwhist
+.bash_history
+.zsh_history
+.zcompdump*
+.wget-hsts
+.config/coc/
+
+# Fish runtime (machine-specific)
+.config/fish/fish_variables
+
+# Backups / swaps
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+*.orig
+
+# Big media
+*.mp4
+*.mkv
+*.iso
+
+# OS
+.DS_Store
+Thumbs.db

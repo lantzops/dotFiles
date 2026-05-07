@@ -1,0 +1,58 @@
+# /$$   /$$                              
+#| $$  | $$                              
+#| $$  | $$ /$$   /$$  /$$$$$$   /$$$$$$ 
+#| $$$$$$$$| $$  | $$ /$$__  $$ /$$__  $$
+#| $$__  $$| $$  | $$| $$  \ $$| $$$$$$$$
+#| $$  | $$| $$  | $$| $$  | $$| $$_____/
+#| $$  | $$|  $$$$$$$| $$$$$$$/|  $$$$$$$
+#|__/  |__/ \____  $$| $$____/  \_______/
+#           /$$  | $$| $$                
+#          |  $$$$$$/| $$                
+#           \______/ |__/                
+
+
+
+# Initialize wallpaper with awww
+exec_always ~/.config/sway/scripts/awww_init_simple.sh
+
+# Make portal backends (wlr) see our Wayland environment
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+
+# Apply SwayFX visual enhancements - only if supported
+corner_radius 12
+blur enable
+blur_xray off
+blur_passes 2
+shadows enable
+
+# Apply visual effects to specific UI elements
+
+
+layer_effects "swaync" {
+    blur enable
+    blur_xray enable
+    shadows enable
+    corner_radius 10
+}
+
+# Start audio services
+exec_always ~/.config/sway/scripts/start_audio_services.sh
+
+
+
+
+
+# include custom sway config
+include "/home/lantzops/.config/sway/config.d/*.conf"
+
+# include default sway config
+include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf")'
+
+exec swaync &
+
+#exec_always dms run &
+
+
+

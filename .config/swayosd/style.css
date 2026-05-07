@@ -1,0 +1,53 @@
+
+/* SwayOSD styling with Catppuccin Mocha colors */
+
+window#osd {
+    border-radius: 12px;
+    border: 1px solid rgba(137, 180, 250, 0.5); /* blue with transparency */
+    background: rgba(30, 30, 46, 0.8); /* base with transparency */
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    font-family: "sans-serif";
+    font-size: 14px;
+    color: #cdd6f4; /* text color */
+}
+
+/* Common bar styles */
+#volume-bar, #brightness-bar {
+    min-width: 200px;
+    height: 12px;
+    background-color: #45475a; /* surface1 */
+    border-radius: 6px;
+}
+
+#volume-bar trough highlight {
+    background-color: #89b4fa; /* blue */
+    border-radius: 6px;
+}
+
+#brightness-bar trough highlight {
+    background-color: #fab387; /* peach */
+    border-radius: 6px;
+}
+
+label {
+    color: #cdd6f4; /* text */
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+image {
+    -gtk-icon-size: 32px;
+    margin-right: 12px;
+    color: #cdd6f4; /* text */
+}
+
+/* Specific positioning for OSD window (example - adjust as needed) */
+/* This can be influenced by your compositor or OSD configuration */
+/* #osd {
+    margin-bottom: 50px;
+    margin-right: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+} */

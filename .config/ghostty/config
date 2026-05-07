@@ -1,0 +1,6 @@
+# Skip the "are you sure you want to close?" prompt
+confirm-close-surface = false
+
+# Bell: don't raise urgency/attention (prevents sway from reacting to it),
+# keep title-flash only. Drop "border" too if your sway theme flashes it.
+bell-features = no-system,no-audio,no-attention,title,no-border

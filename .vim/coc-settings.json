@@ -1,0 +1,39 @@
+{
+  "languageserver": {
+    "ansible": {
+      "command": "ansible-language-server",
+      "args": ["--stdio"],
+      "filetypes": ["yaml.ansible", "ansible"],
+      "rootPatterns": ["ansible.cfg", ".ansible-lint", ".git"]
+    }
+  },
+  "yaml.schemas": {
+    "kubernetes": "*.k8s.yaml",
+    "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook": "playbooks/*.yml",
+    "https://json.schemastore.org/github-workflow.json": ".github/workflows/*.{yml,yaml}",
+    "https://json.schemastore.org/docker-compose.json": "docker-compose*.{yml,yaml}"
+  },
+  "yaml.customTags": [
+    "!And",
+    "!Base64",
+    "!Cidr",
+    "!Equals",
+    "!FindInMap sequence",
+    "!GetAZs",
+    "!GetAtt",
+    "!If",
+    "!ImportValue",
+    "!Join sequence",
+    "!Not",
+    "!Or",
+    "!Ref",
+    "!Select",
+    "!Split",
+    "!Sub"
+  ],
+  "pyright.enable": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "suggest.noselect": false,
+  "suggest.enablePreselect": false
+}

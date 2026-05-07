@@ -1,0 +1,134 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "margin-top": 10,
+    "margin-bottom": 0,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 2,
+    "modules-left": [
+
+        "clock",
+        "disk",
+        "cpu",
+        "memory",
+        "temperature",
+        "custom/weather",
+        "custom/uptime"
+    ],
+    "modules-center": [
+        "sway/workspaces"
+    ],
+    "modules-right": [
+        "sway/window",
+        "tray",
+        "backlight",
+        "pulseaudio",
+        "network",
+        "battery"
+    ],
+    "sway/workspaces": {
+        "format": "{name}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "10": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50
+    },
+    "clock": {
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%H:%M}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "interval": 1,
+        "tooltip-format": "CPU: {usage}% ({avg_load_1m} {avg_load_5m} {avg_load_15m})"
+    },
+    "memory": {
+        "format": "{}% ",
+        "tooltip-format": "Memory: {used}GB / {total}GB ({percentage}%)"
+    },
+    "temperature": {
+        "format": "{temperatureC}°C ",
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C ",
+        "tooltip-format": "Temp: {temperatureC}°C"
+    },
+    "disk": {
+        "format": "{percentage_used}% ",
+        "interval": 30,
+        "tooltip-format": "Disk: {used} / {total} ({percentage_used}%)"
+    },
+    "custom/uptime": {
+        "format": "{} ",
+        "exec": "~/.config/waybar/scripts/uptime.sh",
+        "interval": 60
+    },
+
+    "custom/weather": {
+        "format": "{text}",
+        "tooltip": true,
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+        "interval": 1800
+    },
+
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", ""]
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": "ﱝ {icon} {format_source}",
+        "format-muted": "ﱝ {format_source}",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) {bandwidthUpBits} {bandwidthDownBits} ",
+        "format-ethernet": "{ifname}: {bandwidthUpBits} {bandwidthDownBits} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "tooltip-format-wifi": "{ifname} via {gwaddr} \nSignal strength: {signalStrength}%\nUp: {bandwidthUpBits}\nDown: {bandwidthDownBits}"
+    },
+    "battery": {
+        "device": "BAT0",
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        }
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 5
+    }
+}

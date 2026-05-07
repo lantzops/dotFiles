@@ -1,0 +1,16 @@
+[manager]
+show_hidden = true
+show_symlinks = true
+
+[plugin]
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*"
+run  = "git"
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*/"
+run  = "git"
+
+[theme]

@@ -1,0 +1,228 @@
+/* Main window settings */
+window#waybar {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    color: #cdd6f4;
+    font-family: JetBrainsMono Nerd Font, FiraCode Nerd Font, monospace;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Module styling - creates the pill effect */
+#workspaces,
+#mode,
+#window,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#bluetooth,
+#idle_inhibitor,
+#custom-launcher,
+#custom-weather,
+#custom-uptime,
+#custom-gamma {
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    border-radius: 20px;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    border: 1px solid #313244;
+}
+
+/* Group modules to create the pills */
+.modules-left widget:first-child > #custom-launcher {
+    border-radius: 20px 8px 8px 20px;
+}
+
+.modules-left widget:last-child > * {
+    border-radius: 8px 20px 20px 8px;
+}
+
+.modules-center widget:first-child > #workspaces {
+    border-radius: 20px;
+}
+
+.modules-right widget:first-child > * {
+    border-radius: 20px 8px 8px 20px;
+}
+
+.modules-right widget:last-child > #battery {
+    border-radius: 8px 20px 20px 8px;
+}
+
+/* Specific styling for different modules */
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #cdd6f4;
+    border-radius: 50%;
+}
+
+#workspaces button.active {
+    color: #b4befe;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+    background-color: transparent;
+}
+
+#workspaces button:hover {
+    background: rgba(185, 192, 220, 0.2);
+    border-radius: 50%;
+}
+
+#clock {
+    color: #cba6f7;
+}
+
+#battery {
+    color: #a6e3a1;
+    background-color: #11111b;
+}
+
+#battery.charging, #battery.plugged {
+    color: #11111b;
+    background-color: #a6e3a1;
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f38ba8;
+    color: #11111b;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    color: #f9e2af;
+}
+
+#memory {
+    color: #f5c2e7;
+}
+
+#disk {
+    color: #89b4fa;
+}
+
+#temperature {
+    color: #fab387;
+}
+
+#network {
+    color: #74c7ec;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+}
+
+#pulseaudio {
+    color: #89dceb;
+}
+
+#pulseaudio.muted {
+    color: #f38ba8;
+}
+
+#tray {
+    color: #cba6f7;
+    border-radius: 20px;
+}
+
+#bluetooth {
+    color: #89b4fa;
+}
+
+#idle_inhibitor {
+    color: #f5c2e7;
+}
+
+
+
+
+
+#custom-uptime {
+    color: #a6e3a1;
+}
+
+#custom-weather {
+    color: #f9e2af;
+    font-family: "Font Awesome 6 Free";
+}
+
+
+#window {
+    color: #f5e0dc;
+}
+
+@keyframes blink {
+    to {
+        background-color: #f38ba8;
+        color: #11111b;
+    }
+}
+
+label:focus {
+    background-color: #74c7ec;
+}
+
+#taskbar button {
+    all: unset;
+    border-radius: 8px;
+    min-width: 40px;
+    margin: 0 2px;
+}
+
+#taskbar button.active {
+    background-color: #585b70;
+}
+
+#taskbar button.minimized {
+    background-color: #313244;
+    opacity: 0.6;
+}
+
+
+
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: white;
+}
+
+#privacy-item.screenshare {
+    background-color: #ff6600;
+}
+
+#privacy-item.audio-in {
+    background-color: #2ed000;
+}
+
+#privacy-item.audio-out {
+    background-color: #00a2ff;
+}

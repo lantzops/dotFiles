@@ -1,0 +1,29 @@
+# Swayr configuration with Catppuccin Mocha colors
+
+[keybindings]
+# Switch between windows
+switch_window = ["Mod4+Tab"]
+switch_window_backward = ["Mod4+Shift+Tab"]
+
+# Switch between workspaces
+switch_workspace = ["Mod4+Ctrl+Tab"]
+switch_workspace_backward = ["Mod4+Ctrl+Shift+Tab"]
+
+# Focus window by number
+focus_window_1 = ["Mod4+1"]
+focus_window_2 = ["Mod4+2"]
+focus_window_3 = ["Mod4+3"]
+focus_window_4 = ["Mod4+4"]
+focus_window_5 = ["Mod4+5"]
+focus_window_6 = ["Mod4+6"]
+focus_window_7 = ["Mod4+7"]
+focus_window_8 = ["Mod4+8"]
+focus_window_9 = ["Mod4+9"]
+focus_window_0 = ["Mod4+0"]
+
+[colors]
+# Catppuccin Mocha colors
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+selection_bg = "#cba6f7"
+selection_fg = "#11111b"
