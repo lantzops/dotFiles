@@ -79,9 +79,10 @@ log "checking out dotfiles"
 $GIT checkout
 
 # --- 6. Install brew packages from Brewfile ---
-if [[ -f "$HOME/Brewfile" ]]; then
+BREWFILE="$HOME/.config/dotfiles/Brewfile"
+if [[ -f "$BREWFILE" ]]; then
     log "running brew bundle install"
-    brew bundle install --file="$HOME/Brewfile"
+    brew bundle install --file="$BREWFILE"
 fi
 
 # --- 7. Make brew bash the default login shell ---

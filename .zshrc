@@ -166,7 +166,7 @@ alias present="presenterm"
 alias df="duf"
 alias mkdir='mkdir -p'
 # alias z='cd'
-alias v='nvim'
+alias v='vim'
 alias c='clear'
 alias reload='source ~/.zshrc'
 alias rice="xh -b -F GET git.io/rice"
@@ -205,7 +205,8 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 export BAT_THEME="Catppuccin Mocha"
 export TERMINAL="/usr/bin/kitty"
-export EDITOR="nvim"
+export EDITOR="vim"
+export VISUAL="vim"
 export PATH="$HOME/Desktop/.Scripts/:$HOME/.local/bin/:$PATH"
 export KB_VENDOR="tpacpi"
 export GRIM_DEFAULT_DIR="$HOME/Pictures/Screenshots/"
@@ -228,4 +229,4 @@ eval "$(fzf --zsh)"
 alias kboff='/home/lantzops/claude/input-toggle.sh'
 
 # Dotfiles bare repo manager
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config='/opt/homebrew/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

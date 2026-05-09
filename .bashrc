@@ -39,5 +39,9 @@ if command -v oh-my-posh >/dev/null 2>&1; then
 	eval "$(oh-my-posh init bash --config "$HOME/.cache/oh-my-posh/themes/dos-bbs.omp.json")"
 fi
 
+# Default editor
+export EDITOR="vim"
+export VISUAL="vim"
+
 # Dotfiles bare repo manager
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config='/opt/homebrew/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
