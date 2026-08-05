@@ -62,17 +62,14 @@ else
     fi
 fi
 
-# Set the background using awww
-if command -v awww &>/dev/null; then
-    awww img "$background" --transition-type any --transition-step 63 --transition-angle 0 --transition-duration 2 --transition-fps 60
+# Set the background using swww
+if command -v swww &>/dev/null; then
+    swww img "$background" --transition-type any --transition-step 63 --transition-angle 0 --transition-duration 2 --transition-fps 60
 else
-    # Fallback to swaybg if awww not available
+    # Fallback to swaybg if swww is not available
     killall swaybg 2>/dev/null || true
     swaybg --output '*' --mode fill --image "$background" &
 fi
-
-# Update the awww initialization script to use this wallpaper on startup
-sed -i "s|^awww img \".*\" --transition-type.*|awww img \"$background\" --transition-type any --transition-step 63 --transition-angle 0 --transition-duration 2 --transition-fps 60|" "$HOME/.config/sway/scripts/awww_init_simple.sh"
 
 # Send a notification with the new background name
 notify-send -i "$background" "Background changed" "$(basename "$background") - $MODE mode"

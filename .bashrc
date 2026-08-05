@@ -43,5 +43,9 @@ fi
 export EDITOR="vim"
 export VISUAL="vim"
 
-# Dotfiles bare repo manager
-alias config='/opt/homebrew/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# Dotfiles bare repo manager (Homebrew Git on macOS, system Git elsewhere)
+if [[ -x /opt/homebrew/bin/git ]]; then
+	alias config='/opt/homebrew/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+else
+	alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+fi

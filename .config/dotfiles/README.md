@@ -23,6 +23,22 @@ bash <(curl -fsSL https://raw.githubusercontent.com/lantzops/dotFiles/main/boots
 
 This installs Homebrew, clones the repo with sparse-checkout (excludes Linux/wayland-only configs), runs `brew bundle install` from the [Brewfile](Brewfile), and switches your login shell to brew bash. Prereq: an SSH key authorized for this repo.
 
+### Kali Linux (one-liner)
+
+```sh
+bash <(curl -fsSL https://raw.githubusercontent.com/lantzops/dotFiles/main/bootstrap-kali.sh)
+```
+
+The installer adds the packages available on your Kali release, backs up conflicting
+dotfiles, checks out the bare repository, installs the bundled fonts, and prepares
+the Sway/Waybar scripts. Download it and pass `--skip-packages` if the desktop
+packages are already installed. Monitor and input settings remain in
+`.config/sway/config.d/` because those are likely to need adjustment on new hardware.
+
+Kali ships vanilla Sway rather than SwayFX. The SwayFX appearance directives are
+kept in the config so the full look returns if you install SwayFX; vanilla Sway may
+show warnings for those directives while the rest of the session remains usable.
+
 ### Linux (manual)
 
 ```sh
