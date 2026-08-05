@@ -15,6 +15,9 @@ Tracked with the [bare-repo-in-$HOME](https://www.atlassian.com/git/tutorials/do
 
 ## Install
 
+For the complete Kali migration, minimal Wayland/Sway installation, and SwayFX
+notes, see [KALI-SWAY.md](KALI-SWAY.md).
+
 ### macOS (one-liner)
 
 ```sh
